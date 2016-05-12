@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="tools">
+    <% @tools.each do |tool| %>
+      <li>
+        <%= link_to tool.title, refinery.tools_tool_path(tool) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

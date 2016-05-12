@@ -1,0 +1,33 @@
+nl:
+  refinery:
+    plugins:
+      tools:
+        title: Tools
+    tools:
+      admin:
+        tools:
+          actions:
+            create_new: Nieuwe Tool toevoegen
+            reorder: De volgorde van de Tools wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Tool-volgorde
+          records:
+            title: Tools
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Tools. Druk op 'Nieuwe Tool toevoegen' om de eerste toe te voegen.
+          tool:
+            view_live_html: Deze tool op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze tool
+            delete: Deze tool definitief verwijderen
+      tools:
+        show:
+          other: Andere Tools
+  activerecord:
+    attributes:
+      'refinery/tools/tool':
+        title: Title
+        header_image_id: Header Image
+        screen_shot_image_id: Screen Shot Image
+        tool_url: Tool Url
+        download_data_set: Download Data Set
+        description: Description
+        what_tools_description: What Tools Description

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="230px" height="186px" viewBox="0 0 230 186" enable-background="new 0 0 230 186" xml:space="preserve">
+<rect fill="none" width="230" height="186"/>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="230" height="186"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_2_)">
+		<g>
+			<polygon fill="#D4D3D3" points="105.42,19.671 202.244,167.934 216.953,158.328 			"/>
+			<polygon fill="#BABABA" points="105.42,19.671 202.244,167.934 187.534,177.544 			"/>
+		</g>
+		<polygon fill="#BABABA" points="297.781,314.228 200.955,165.964 215.665,156.354 		"/>
+		<polygon fill="#CDCCCC" points="297.781,314.228 200.955,165.964 186.247,175.57 		"/>
+		<circle fill="#D4D3D3" cx="201.52" cy="167.085" r="13.385"/>
+		<path fill="#BABABA" d="M213.148,160.154c-4.046-6.195-12.876-8.245-18.83-4.355l7.926,12.135"/>
+		<path fill="#333333" d="M190.084,174.054"/>
+		<path fill="#A8A7A7" d="M209.102,162.179c2.775,4.253,1.579,9.957-2.675,12.736c-4.257,2.778-9.96,1.58-12.737-2.673
+			c-2.781-4.258-1.583-9.957,2.675-12.738C200.616,156.726,206.319,157.92,209.102,162.179z"/>
+		<g>
+			<polyline fill="#A8A7A7" points="138.379,83.092 105.42,19.671 144.325,79.245 			"/>
+			<polyline fill="#A8A7A7" points="150.198,75.293 105.42,19.671 144.325,79.245 			"/>
+		</g>
+	</g>
+</g>
+</svg>

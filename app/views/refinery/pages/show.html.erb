@@ -1,0 +1,42 @@
+<% content_for :page_title do %><%= @page.title + " | Proteus Partners" %><% end %>
+<% content_for :meta_description do %><%= raw truncate( sanitize(@page.content_for(:body), :tags=>[]), :length => 155) %><% end %>
+
+<div class="main-container clearfix">
+
+  <section id="general-page">
+
+    <h1 class="dark-header general-mobile-h1"><%= @page.title %></h1>
+
+    <h1 class="dark-header desktop-h1"><%= @page.title %></h1>
+
+    <%= raw @page.content_for(:body) %>
+
+  </section>
+
+  <aside id="general-page-sidebar">
+    
+
+    <div class="tool-links">
+      <h2><%= copywriting('Tools sidebar title', {scope: 'general', default: 'Tools'}) %></h2>
+
+      <p><%= copywriting('Sidebar text', {scope: 'general', default: 'Information to support decision makers'}) %></p>
+
+      <% @tools.each do |t| %>
+        <%= link_to t.title, refinery.tools_tool_path(t), class: "tools-link" %>
+      <% end %>
+    </div>
+
+  </aside>
+
+  <div class="browse-resources">
+    <h2><%= copywriting('Resources', {scope: 'general', default: 'Resources'}) %></h2>
+
+    <div class="browse-resources-info">
+      <p><%= copywriting('Browse resources sidebar text', {scope: 'general', default: 'From the country factsheets to meeting notes'}) %></p>
+      <div class="button blue-button">
+        <%= link_to copywriting('Browse resources button text', {scope: 'general', default: 'Browse Resources'}), refinery.documents_documents_path %>
+      </div>
+    </div>
+  </div>
+
+</div>

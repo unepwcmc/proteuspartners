@@ -1,0 +1,33 @@
+en:
+  refinery:
+    plugins:
+      tools:
+        title: Tools
+    tools:
+      admin:
+        tools:
+          actions:
+            create_new: Add New Tool
+            reorder: Reorder Tools
+            reorder_done: Done Reordering Tools
+          records:
+            title: Tools
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Tools yet. Click "Add New Tool" to add your first tool.
+          tool:
+            view_live_html: View this tool live <br/><em>(opens in a new window)</em>
+            edit: Edit this tool
+            delete: Remove this tool forever
+      tools:
+        show:
+          other: Other Tools
+  activerecord:
+    attributes:
+      'refinery/tools/tool':
+        title: Title
+        header_image_id: Header Image
+        screen_shot_image_id: Screen Shot Image
+        tool_url: Tool Url
+        download_data_set: Download Data Set
+        description: Description
+        what_tools_description: What Tools Description

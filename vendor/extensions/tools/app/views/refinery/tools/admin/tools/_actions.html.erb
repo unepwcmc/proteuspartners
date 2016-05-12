@@ -1,0 +1,26 @@
+<ul>
+  <% if ::Refinery::Tools::Admin::ToolsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.tools_admin_tools_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_tools_admin_tool_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Tools::Admin::ToolsController.sortable? && ::Refinery::Tools::Tool.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Tools"),
+                 refinery.tools_admin_tools_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Tools"),
+                 refinery.tools_admin_tools_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+  <%= render '/refinery/admin/search_tips' %>
+</ul>

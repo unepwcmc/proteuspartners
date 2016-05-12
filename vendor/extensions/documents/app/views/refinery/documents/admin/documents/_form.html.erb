@@ -1,0 +1,49 @@
+<% content_for :javascripts, javascript_include_tag('refinery/categories') %>
+<% content_for :stylesheets, stylesheet_link_tag('refinery/categories') %>
+
+
+
+<%= form_for [refinery, :documents_admin, @document] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @document,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <%= render 'form_fields_after_title', :f => f %>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:description],
+                :object => "documents/document" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :document, "PDF upload" -%>
+    <%= render '/refinery/admin/resource_picker',
+               :f => f,
+               :field => :document_id,
+               :resource => @document.document -%>
+  </div>
+
+  <h1>Categories</h1>
+  
+  <%= output_term_associations() %>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.documents.admin.documents.document'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @document.title) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

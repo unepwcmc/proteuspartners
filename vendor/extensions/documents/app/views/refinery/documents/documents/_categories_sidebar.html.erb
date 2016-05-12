@@ -1,0 +1,22 @@
+<!-- CATEGORIES -->
+<aside id="categories-sidebar">
+  <div class="category-links">
+    <h2><%= copywriting('Categories', {scope: 'categories', default: 'Categories'}) %></h2>
+    <% @categories_side.each do |c| %>
+      <%= link_to c.title, refinery.documents_category_path(c), class: "category-link" %>
+    <% end %>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="sidebar-search-input clearfix">
+    <h2><%= copywriting('Search all resources', {scope: 'categories', default: 'Search all resources'}) %></h2>
+    <%= form_tag(refinery.documents_documents_path, method: :get) do %>
+      <!-- <div class="field"> -->
+        <%= text_field_tag :search, params[:search], :place_holder => "Search Resources" %>
+      <!-- </div> -->
+      <fieldset class="button">
+        <%= submit_tag "" %>
+      </fieldset>
+    <% end %>
+  </div>
+</aside>

@@ -1,0 +1,34 @@
+@mixin header-logo($image, $padding, $width, $display: inline-block, $position: relative) {
+  background: image-url("#{$image}.svg") no-repeat center left;
+  display: $display;
+  padding: $padding;
+  position: $position;
+  width: $width;
+}
+
+@mixin bullet-point-bg($left-color: $main-bullet-bg-left, 
+                       $right-color: $main-bullet-bg-right, 
+                       $height: 24px, 
+                       $width: 24px, 
+                       $x-pos: 0, 
+                       $y-pos: 0) {
+  background: $left-color;
+  background: linear-gradient(to right, $left-color 50%, $right-color 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$left-color}', endColorstr='#{$right-color}',GradientType=1 );
+  content: "";
+  height: $height;
+  left: $x-pos;
+  position: absolute;
+  text-align: center;
+  top: $y-pos;
+  width: $width;
+}
+
+@mixin bullet-point-content($content: "+", $font-size: 14px, $x-pos: 7px, $y-pos: 1px) {
+  content: $content;
+  color: $white;
+  font-size: $font-size;
+  left: $x-pos;
+  position: absolute;
+  top: $y-pos;
+}

@@ -1,0 +1,34 @@
+es:
+  refinery:
+    plugins:
+      tools:
+        title: Tools
+#        article: masculino/femenino
+    tools:
+      admin:
+        tools:
+          actions:
+            create_new: Crear nuevo tool
+            reorder: Reordenar tools
+            reorder_done: Reordenación de tools completada
+          records:
+            title: Tools
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay tools todavía. Pulsa en "Crear nuevo Tool" para crear tu primer tool.
+          tool:
+            view_live_html: Ver este tool como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este tool
+            delete: Borrar este tool para siempre
+      tools:
+        show:
+          other: Otros tools
+  activerecord:
+    attributes:
+      'refinery/tools/tool':
+        title: Title
+        header_image_id: Header Image
+        screen_shot_image_id: Screen Shot Image
+        tool_url: Tool Url
+        download_data_set: Download Data Set
+        description: Description
+        what_tools_description: What Tools Description

@@ -1,0 +1,124 @@
+//***** Base Config *****//
+
+// Configure as necessary
+$base-font-family       : "museo-sans",sans-serif;
+$h1-font-family         : "Roboto Slab", serif;
+$base-font-weight       : 300;
+$base-text-color        : #000000;
+$base-background-color  : #FFFFFF;
+
+//***** Text *****//
+
+$base-font-size           : 16px;
+$h1-font-size             : 36px;
+$h2-font-size             : 24px;
+$h3-font-size             : 18px;
+$h4-font-size             : 16px;
+$content-font-size        : 14px;
+$button-font-size         : 12px;
+$footer-font-size         : 12px;
+$home-accordion-font-size : 12px;
+
+$base-line-height : 1.5;
+
+//***** Font Weights *****//
+
+// Configure as necessary 
+$font-weight--utlra-thin : 100;
+$font-weight--thin       : 300;
+$font-weight--medium     : 500;
+$font-weight--bold       : 700;
+$font-weight--ultra-bold : 900;
+
+
+//***** Z-Index Layers *****//
+
+$z-index-layer--fourth   : 100;
+$z-index-layer--third    : 200;
+$z-index-layer--second   : 300;
+$z-index-layer--first    : 400;
+
+//***** Colors *****//
+
+$dark-header                : #0C232E;
+$light-grey                 : #CCCCCB;
+$lighter-grey               : #E6E6E6;
+$grey                       : #4C5867;
+
+$lightweight-content        : #38414B;
+$call-to-action             : #05A0D0;
+$aside-border               : #4C5867;
+$button-border-right        : #00ACD4;
+$button-border-bottom       : #00B5D8;
+$categories-sidebar-border  : #004868;
+$footer-banner              : #539642;
+
+// Buttons
+
+$button-border-right            : #00ACD4;
+$button-border-bottom           : #00B5D8;
+$inverted-button-border-right   : #00ACD4;
+$inverted-button-border-bottom  : #00B5D8;
+
+// Bullet points
+$main-bullet-bg-right        : #0C232E;
+$main-bullet-bg-left         : #004868;
+$secondary-bullet-bg-right   : #3E642F;
+$secondary-bullet-bg-left    : #539642;
+
+$white    : #FFF;
+$black    : #000;
+
+// Resource list item header colors
+$item-1-color : #539642;
+$item-2-color : #cdb22b;
+$item-3-color : #004868;
+$item-4-color : #C13E2B;
+$item-5-color : #05A0D0;
+$item-6-color : #3E642F;
+
+//***** Paddings *****//
+
+$element-padding--ultra-thick   : 100px;
+$element-padding--thick         : 50px;
+$element-padding--regular       : 35px;
+$element-padding--thin          : 25px;
+  
+$element-margin--ultra-thick    : 100px;
+$element-margin--thick          : 50px;
+$element-margin--regular        : 35px;
+$element-margin--thin           : 25px;
+
+//***** Borders *****//
+
+$section-border-styling    : 6px solid $light-grey;
+
+//***** Breakpoints *****//
+
+// Any styles not wrapped in a breakpoint mixin will be displayed from zero pixel width up 
+$mobile           : 20.000em; //min width 320px @16px
+$large_mobile     : 30.063em; //min width 481px @16px
+$small_tablet     : 38.000em; //min width 608px @16px
+$tablet           : 48.000em; //min width 768px @16px 
+$large_tablet     : 56.250em; //min width 900px @16px 
+$desktop          : 64.375em; //min width 1030px @16px 
+$large_desktop    : 77.500em; //min width 1240px @16px 
+
+$max-large-mobile                     : max-width 30.0000em; //max width 480px @16px
+$max-large-mobile-landscape           : max-width 41.6875em; //max width 667px @16px
+$min-tablet                           : 48.0000em; //min width 768px @16px
+$max-tablet                           : max-width 48.0000em; //min width 768px @16px
+$min-main-container-device--landscape : (min-width 67.1875em) (orientation landscape); //max width 1075px @16px (size of main container)
+$max-main-container-device--portrait  : (max-width 67.1875em) (orientation portrait); //max width 1075px @16px (size of main container)
+$max-main-container                   : max-width 67.1875em; //max width 1075px @16px (size of main container)
+
+// Any styles not wrapped in a breakpoint mixin will be displayed from zero pixel width up 
+// $max_small_mobile: max-width 20em; //min width 320px @16px
+// $max_large_mobile: max-width 30.0625em; //max width 481px @16px
+// $large_mobile: 30.0625em; //min width 481px @16px
+// $max_large_mobile_landscape: max-width 41.6875em; //max width 667px @16px
+// $large_mobile_landscape: 41.6875em; //min width 667px @16px
+// $max_tablet: max-width 48.000em; //max width 768px @16px
+// $tablet: 48.000em; //min width 768px @16px 
+// $max_large_tablet: max-width 64.000em; //max width 1024px @16px
+// $min_large_tablet: 64.000em; //min width 1024px @16px

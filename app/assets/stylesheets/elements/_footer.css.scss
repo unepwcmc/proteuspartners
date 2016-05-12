@@ -1,0 +1,188 @@
+@import "../_all-globals";
+
+#footer {
+  background: image-url("footer-bg.png") top left;
+  clear: both;
+  padding: em($element-padding--ultra-thick) 0 em($element-padding--thin);
+  position: relative;
+
+  .partners-showcase {
+    background-color: $white;
+    min-height: em(250px);
+    margin-bottom: em($element-margin--thin);
+    padding: em(75px) 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    aside {
+      background-color: $footer-banner;
+      color: $white;
+      margin: 0;
+      margin-top: em(-35px);
+      padding: em(10px) em(25px);
+      position: absolute;
+      text-align: left;
+      top: 0;
+      width: em(500px);
+
+      &:after {
+        content: "";
+        border-style: solid;
+        border-width: 34px 0 34px 25px;
+        border-color: transparent transparent transparent $footer-banner;
+        height: 0;
+        left: em(500px);
+        position: absolute;
+        top: 0;
+        width: 0;
+      }
+    }
+
+    h4 {
+      display: inline-block;
+      margin: 0;
+      min-height: em(150px);
+      padding: em(60px) 0;
+      text-align: center;
+      text-transform: uppercase;
+      vertical-align: middle;
+      width: 15.25424%;
+
+      @include breakpoint($max-large-mobile-landscape) { 
+        font-size: em($h2-font-size);
+        min-height: 0;
+        padding: em($element-padding--thin, $h2-font-size) 0;
+        width: 100%;
+      }
+    }
+
+    ul {
+      display: inline-block;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      vertical-align: middle;
+      width: 83.05085%;
+
+      @include breakpoint($max-large-mobile-landscape) {
+        display: inline-block;
+        width: 70%;
+      }
+
+      li {
+        background-size: 40%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-left: 1px solid $light-grey;
+        display: inline-block;
+        float: left;
+        height: em(100px);
+        padding: 10px;
+        position: relative;
+        text-align: center;
+        width: 14%;
+
+        a {
+          padding: 0 50px 50px;
+        }
+
+        &.aspect-ratio-4-1 {
+          background-size: 85%;
+        }
+
+        &.aspect-ratio-4-2 {
+          background-size: 60%;
+        }
+
+        &:nth-child(7n+7) {
+          border-right: 1px solid $light-grey;
+        }
+
+        &:nth-child(n+9):before {
+          border-top: 1px solid $light-grey;
+          content : "";
+          width: 50%;
+          position: absolute;
+          right: 25%;
+          top: 0;
+        }
+
+        @include breakpoint($max-large-mobile-landscape) {
+          border: none;
+          float: left;
+          width: 33.3333333%;
+
+          &:before {
+            visibility: hidden;
+          }
+
+          &:nth-child(6n+4), &:nth-child(6n+5), &:nth-child(6n+6) {
+            margin-bottom: 40px;
+
+            &:before {
+              border-top: 1px solid $light-grey;
+              content : "";
+              width: 50%;
+              position: absolute;
+              right: 25%;
+              top: 0;
+              visibility: visible;
+            }
+          }
+
+          &:nth-child(7n+7) {
+            border-right: none;
+          }
+
+          &:nth-child(6n+7) {
+            clear: left;
+          }
+
+          &:nth-child(3n+2) {
+            border-left: 1px solid $light-grey;
+            border-right: 1px solid $light-grey;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-info {
+    height: 50px;
+    padding: 0 em(50px);
+
+    #unep-wcmc-footer-logo {
+      @include header-logo($width: 115px, $image: "unep-wcmc-footer-logo", $padding: 0 em(20px));
+
+      height: 50px;
+    }
+
+    ul {
+      float: right;
+      list-style: none;
+      padding: 0;
+
+      li {
+        color: $lightweight-content;
+        display: inline-block;
+        font-size: $footer-font-size;
+        padding: 0 em(10px, 12px);
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  //** RESPONSIVE **//
+  @include breakpoint($max-large-mobile-landscape) {
+    .partners-showcase {
+      aside {
+        width: 100%;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}

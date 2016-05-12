@@ -1,0 +1,73 @@
+<% content_for :page_title do %><%= "Resources | Proteus Partners" %><% end %>
+
+<div class="resources-index-wrapper">
+
+  <section id="resources-index" class="main-container first-section clearfix"> 
+
+    <% content_for :body do %>
+
+      <h1 class="dark-header mobile-h1"><%= copywriting('Resources title', {scope: 'resources', default: 'Proteus Resources'}) %></h1>
+
+      <%= render 'categories_sidebar' %>
+
+      <!-- RESOURCES -->
+      <section id="resources-list">
+        <h1 class="dark-header desktop-h1"><%= copywriting('Resources title', {scope: 'resources', default: 'Proteus Resources'}) %></h1>
+
+        <% if params[:search].present? %>
+          <div id="search-results" class="clearfix">
+            <p class="search-term"><%= copywriting('Search term text', {scope: 'search', default: 'Search for'}) %> "<%= @searched_item %>"</p>
+            <p class="results-found"><span><%= @total_records %></span> <%= copywriting('Results found text', {scope: 'search', default: 'results found'}) %></p>
+          </div>
+          <dl class="accordion">
+            <%= render partial: 'search', collection: @documents_search, as: 'document' %>
+          </dl>
+
+          <% if @total_records > 10 %>
+            <div class="pagination-box">
+              <p>Results per page:</p>
+              
+              <%= form_tag refinery.documents_documents_path, :method => :get do %>
+
+                <%= select_tag :per_page, options_for_select([10,20,50], params[:per_page].to_i),
+                :onchange => "this.form.submit()" %>
+                
+                <%= render_hidden_fields(:per_page) %>
+
+              <% end %>
+
+              <%= will_paginate @documents_search, inner_window: 1, outer_window: 0 %>
+            </div>
+          <% end %>
+
+        <% else %>
+          <dl class="accordion">
+            <%= render partial: 'document', collection: @documents, as: 'document' %>
+          </dl>
+          <div class="pagination-box">
+            <p>Results per page:</p>
+            
+             <%= form_tag refinery.documents_documents_path, :method => :get do %>
+
+              <%= select_tag :per_page, options_for_select([10,20,50], params[:per_page].to_i),
+              :onchange => "this.form.submit()" %>
+              
+              <%= render_hidden_fields(:per_page) %>
+
+            <% end %>
+
+            <%= will_paginate @documents, inner_window: 1, outer_window: 0 %>
+          </div>
+        <% end %>
+
+       <!-- Look at clare on rails in application helper to get hidden fields for results per page -->
+        
+      </section>
+
+    <% end %>
+
+    <%= render '/refinery/content_page' %>
+
+  </section> 
+
+</div>

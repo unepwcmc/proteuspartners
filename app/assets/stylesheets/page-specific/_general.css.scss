@@ -1,0 +1,213 @@
+@import "../_all-globals";
+
+//** GENERAL PAGE STYLING **//
+
+//** RESPONSIVE **//
+@include breakpoint($max-main-container) {
+  .pages.show {
+    .main-container {
+      padding-bottom: em($element-padding--regular);
+    }
+  }
+}
+
+#general-page {
+  @include span(8.5);
+
+  margin-bottom: $element-margin--ultra-thick;
+  padding: $element-padding--regular $element-padding--thick $element-padding--thin 0;
+  position: relative;
+
+  &:after {
+    border-bottom: $section-border-styling;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    visibility: visible;
+    width: 93%;
+  }
+
+  .desktop-h1 {
+    margin-bottom: $element-margin--thin;
+    margin-left: -400%;
+    text-align: right;
+    width: 500%;
+  }
+
+  .general-mobile-h1 {
+    display: none;
+
+    //** RESPONSIVE **//
+    @include breakpoint($max-main-container) {
+      display: block;
+      margin: 35px 0 25px;
+      padding: em($element-padding--thin, $h1-font-size);
+    }
+  }
+
+  h2 {
+    margin: em($element-margin--thin, $h2-font-size) 0;
+  }
+
+  p, ul, ol {
+    color: $lightweight-content;
+    font-weight: $font-weight--utlra-thin;
+  }
+
+  p:nth-child(3):first-of-type {
+    font-weight: $font-weight--medium;
+    color: $black;
+  }
+
+  a {
+    color: $call-to-action;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  img {
+    border: 5px solid $lighter-grey;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: em(10px) 0;
+      padding-left: em($element-padding--thick);
+      position: relative;
+
+      &:before {
+        @include bullet-point-bg($height: 16px, $width: 16px, $y-pos: 3px);
+        left: 20px;
+      }
+    }
+  }
+
+  ol {
+    padding-left: em(20px);
+  }
+
+  table {
+    border: 2px solid $lighter-grey;
+    margin: 0 auto;
+
+    caption {
+      font-weight: $font-weight--medium;
+    }
+
+    td {
+      border: 2px solid $lighter-grey;
+      padding: 5px;
+    }
+  }
+
+  //** RESPONSIVE **//
+  @include breakpoint($max-main-container) {
+    float: none;
+    margin-bottom: $element-margin--thin;
+    padding: 0;
+    width: 100%;
+
+    .desktop-h1 {
+      display: none;
+    }
+
+    p:first-of-type {
+      padding-top: 0;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+//** GENERAL PAGE SIDEBAR **//
+
+#general-page-sidebar {
+  @include span(3.5 omega);
+
+  border: 3px solid $aside-border;
+  margin: 139px 0 em($element-margin--thin); // 139px = height of section padding + height of header
+  padding-bottom: em($element-padding--thin);
+  
+
+  .tool-links {
+
+    h2 {
+      border-bottom: 3px solid $aside-border;
+      padding: em(15px, $h2-font-size) em($element-padding--thin, $h2-font-size);
+      width: 100%;
+    }
+
+    p {
+      padding: 0 em($element-padding--thin);
+    }
+
+    a {
+      color: $call-to-action;
+      display: block;
+      padding: em(15px) em($element-padding--thin) em(15px) em(75px);
+      position: relative;
+      text-transform: uppercase;
+
+      &:before {
+        @include bullet-point-bg($x-pos: 25px, $y-pos: 13px);
+      }
+
+      &:after {
+        border-bottom: 2px solid $lighter-grey;
+        bottom: 0;
+        content : "";
+        left: 25px;
+        position: absolute;
+        width: 80%;
+      }
+    }
+  } 
+
+  //** RESPONSIVE **//
+  @include breakpoint($max-main-container) {
+    display: none;
+  }
+}
+
+.browse-resources {
+  @include span(3.5 omega);
+
+  clear: right;
+
+  h2 {
+    background-color: $lighter-grey;
+    height: em(68px, $h2-font-size);
+    margin: em(20px, $h2-font-size) 0 em(10px, $h2-font-size) 0;
+    padding: em(16px, $h2-font-size) em(20px, $h2-font-size);
+  }
+
+  .browse-resources-info {
+    background-color: $lighter-grey;
+    margin-bottom: em($element-margin--ultra-thick);
+    padding: em($element-padding--thin);
+
+    p {
+      margin: 0;
+    }
+
+    .button {
+      margin-top: $element-margin--thin;
+      width: 100%;
+    }
+  }
+
+  //** RESPONSIVE **//
+  @include breakpoint($max-main-container) {
+    display: none;
+  }
+}
+

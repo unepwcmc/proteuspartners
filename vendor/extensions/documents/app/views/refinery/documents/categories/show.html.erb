@@ -1,0 +1,116 @@
+<% content_for :page_title do %><%= @category.title + " | Proteus Partners" %><% end %>
+<% content_for :meta_description do %><%= raw truncate( sanitize(@category.description, :tags=>[]), :length => 155) %><% end %>
+
+<% content_for :body_content_title do %>
+  <%= @category.title %>
+<% end %>
+
+<section id="categories">
+
+  <div class="categories-show-wrapper">
+
+    <div class="wrapper">
+
+      <div class="main-container first-section clearfix">
+
+        <% content_for :body do %>
+
+        <h1 class="dark-header mobile-h1"><%=raw @category.title %></h1>
+
+        <!-- TODO: get sidebar rendering from partial -->
+        <%#= render partial: '/shared/categories_sidebar' %>
+
+        <aside id="categories-sidebar">
+          <div class="category-links">
+
+            <h2><%= copywriting('Categories sidebar title', {scope: 'categories', default: 'Categories'}) %></h2>
+            <% @categories_side.each do |c| %>
+
+              <%= link_to c.title, refinery.documents_category_path(c), class: "category-link" %>
+            <% end %>
+
+          </div>
+
+          <!-- SEARCH -->
+          <div class="sidebar-search-input">
+
+            <h2><%= copywriting('Search bar title', {scope: 'categories', default: 'Search'}) %></h2>
+
+            <%= form_tag(refinery.documents_documents_path, method: :get) do %>
+              <%= text_field_tag :search, params[:search], :place_holder => "Search Resources" %>
+              <fieldset>
+                <%= submit_tag "" %>
+              </fieldset>
+            <% end %>
+          </div>
+        </aside>
+
+        <section id="categories-show">
+          <h1 class="dark-header desktop-h1"><%=raw @category.title %></h1>
+          
+          <%=raw @category.description %>
+          
+         <!--  Documents for main category -->
+          <% if @sub_categories.empty? %>
+            <dl class="accordion no-sub-category">
+              <% @category_documents.each do |d| %>
+                <dt class="resources-list-item">
+                  <h3 class="accordion-title"><%= d.title %></h3>
+                </dt>
+                <dd>
+                  <%=raw d.description %>
+                  <a href="<%=raw d.link_url %>" class="document-external-link"><%=raw d.link_url %></a>
+
+                  <% if d.document %>
+                    <div class="button blue-button">
+                      <%= link_to copywriting('Download button text', {scope: 'resources', default: 'Download'}), refinery.documents_document_path(d, format: 'pdf'), target: :blank %>
+                    </div>
+                  <% end %>
+
+                  <div class="embedded-video"><%=raw d.embed_code %></div>
+                </dd>
+
+              <% end %>
+            </dl>
+          <% end %>
+
+          <!-- SUB CATEGORIES -->
+          
+            <ul class="accordion">
+            <% @sub_categories.each do |sub| %>
+              <li>
+                <h2 class="sub-category-title"><%= sub.title %></h2>
+                <dl class="accordion">
+                <% sub.documents.order('title ASC').each do |doc| %>
+                  <dt><h3 class="accordion-title"><%= doc.title %></h3></dt>
+                  <dd>
+                    <%=raw doc.description %>
+                    <a href="<%=raw doc.link_url %>" class="document-external-link"><%=raw doc.link_url %></a>
+                    
+                    <% if doc.document %>
+                      <div class="button blue-button">
+                        <%= link_to copywriting('Download button text', {scope: 'categories', default: 'Download'}), refinery.documents_document_path(doc, format: 'pdf'), target: :blank %>
+                      </div>
+                    <% end %>
+                    
+                    <div class="embedded-video"><%=raw doc.embed_code %></div>
+                  </dd>
+                <% end %>
+                </dl>
+              </li>
+            <% end %>
+            </ul>
+
+        </section>
+
+      <% end %>
+
+      <%= render '/refinery/content_page' %>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

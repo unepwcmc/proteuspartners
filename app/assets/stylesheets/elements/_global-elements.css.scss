@@ -1,0 +1,92 @@
+@import "../_all-globals";
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body, {
+  height: 100%;
+  min-width: 400px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: $base-background-color;
+  color: $base-text-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  overflow-x: hidden;
+
+  section {
+    color: $base-text-color;
+  }
+
+  p.alert, p.notice {
+    margin: 0;
+    text-align: center;
+  }
+
+  &.sessions.new {
+
+    header {
+      p.notice, p.alert {
+        display: none;
+      }
+    }
+
+    #secondary-header {
+      display: none;
+    }
+
+    footer {
+      display: none;
+    }
+  }
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+// Used on homepage, header, footer //
+.main-container {
+  margin: 0 auto;
+  position: relative;
+  width: 1075px;
+
+  //** RESPONSIVE **//
+  @include breakpoint($max-main-container) {
+    width: 90%;
+  }
+
+  @include breakpoint(($max-main-container-device--portrait, $max-tablet)) { 
+    width: 95%;
+  }
+}
+
+.right-aligned-main-container {
+  margin: 0;
+  padding-left: calc((100% - 1075px)/2);
+  position: relative;
+  width: 100%;
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}

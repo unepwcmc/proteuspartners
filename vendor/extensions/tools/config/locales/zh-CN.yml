@@ -1,0 +1,35 @@
+zh-CN:
+  refinery:
+    plugins:
+      tools:
+        title: Tools
+    tools:
+      admin:
+        tools:
+          actions:
+            create_new: 建立新的 Tool
+            reorder: 对 Tools 重新排序
+            reorder_done: 对 Tools 的重新排序结束
+          records:
+            title: Tools
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Tools yet. Click "Add New Tool" to add your first tool.
+            no_items_yet: 目前没有 Tools . 点击 "Add New Tool" 创建一个tool.
+          tool:
+            view_live_html: 查看 tool 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 tool
+            delete: 永久删除 tool
+      tools:
+        show:
+          other: 其他 Tools
+  activerecord:
+    attributes:
+      'refinery/tools/tool':
+        title: Title
+        header_image_id: Header Image
+        screen_shot_image_id: Screen Shot Image
+        tool_url: Tool Url
+        download_data_set: Download Data Set
+        description: Description
+        what_tools_description: What Tools Description

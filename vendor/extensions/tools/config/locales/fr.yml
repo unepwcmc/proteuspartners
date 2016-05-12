@@ -1,0 +1,33 @@
+fr:
+  refinery:
+    plugins:
+      tools:
+        title: Tools
+    tools:
+      admin:
+        tools:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Tool
+            reorder: Réordonner les Tools
+            reorder_done: Fin de réordonnancement des Tools
+          records:
+            title: Tools
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Tool. Cliquer sur "Créer un(e) nouve(au/l/lle) Tool" pour créer votre premi(er/ère) tool.'
+          tool:
+            view_live_html: Voir ce(t/tte) tool <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) tool
+            delete: Supprimer définitivement ce(t/tte) tool
+      tools:
+        show:
+          other: Autres Tools
+  activerecord:
+    attributes:
+      'refinery/tools/tool':
+        title: Title
+        header_image_id: Header Image
+        screen_shot_image_id: Screen Shot Image
+        tool_url: Tool Url
+        download_data_set: Download Data Set
+        description: Description
+        what_tools_description: What Tools Description

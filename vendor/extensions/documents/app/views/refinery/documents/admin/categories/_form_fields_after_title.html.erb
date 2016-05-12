@@ -1,0 +1,21 @@
+<div class="field">
+  <%= f.label :protected %>
+  <%= f.check_box :protected %>
+</div>
+
+<!-- <div class="field">
+   <%= f.label :image_id, "Image uploads, use jpeg or png" %>
+   <%= render :partial => "/refinery/admin/image_picker", :locals => {
+       :f => f,
+       :field => :image_id,
+       :image => f.object.image,
+       :toggle_image_display => false
+   } %>
+</div> -->
+
+<div class='field'>
+  <%= render '/refinery/admin/wysiwyg',
+    :f => f,
+    :fields => [:description],
+    :object => "tools/tool" -%>
+</div>

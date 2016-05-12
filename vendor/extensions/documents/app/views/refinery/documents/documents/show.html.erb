@@ -1,0 +1,48 @@
+<% content_for :body_content_title do %>
+  <%= @document.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @document.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @document.description %>
+    </p>
+    <%=raw @document.embed_code %>
+  </section>
+  <% @document.categories.each do |c| %>
+    <p><%= c.title %></p>
+  
+  <% end %>
+  <section>
+    <h1>Document</h1>
+    <p>
+      <% if @document.document.present? %>
+        <%= link_to 'document', @document.document.url %>
+      <% else %>
+        document
+      <% end %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="documents">
+      <% @documents.each do |document| %>
+        <li>
+          <%= link_to document.title, refinery.documents_document_path(document) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

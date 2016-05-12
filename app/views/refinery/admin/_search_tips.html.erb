@@ -1,0 +1,49 @@
+<style type="text/css">
+
+.search-tips-title {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.search-tips-show {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.search-tips-show:hover {
+  text-decoration: underline;
+}
+
+.search-tips {
+  color: gray;
+  display: none;
+}
+</style>
+
+<div class="search-tips-header">
+  <h3 class="search-tips-title">Search Tips</h3>
+  <p class="search-tips-show">show</p>
+</div>
+
+<div class="search-tips">
+  <p>Use the advanced search features including them along with your search terms.</p>
+
+  <h3>AND</h3>
+  <p>This is the default option. 'cat dog' will find records matching 'cat' AND 'dog'.</p>
+
+  <h3>NOT</h3>
+  <p>'cat -dog' will find records matching 'cat' AND NOT 'dog'.</p>
+
+  <h3>INCLUDE</h3>
+  <p>'cat +me' will find records matching 'cat' and 'me', even if 'me' is smaller than the min_word_size</p>
+
+  <h3>“”</h3>
+  <p>Quoted terms are matched as phrases. '“cat dog”' will find records matching the whole phrase. Quoted terms can be preceded by the NOT operator; 'cat -“big dog”' etc.</p>
+
+  <h3>^</h3>
+  <p>Terms that begin with ^ will match records that contain a word starting with the term. '^cat' will find matches containing 'cat', 'catapult', 'caterpillar' etc.</p>
+
+  <h3>^“”</h3>
+  <p>A quoted term that begins with ^ matches any phrase that begin with this phrase. '^“cat d”' will find records matching the whole phrases “cat dog” and “cat dinner”. This type of search is useful for autocomplete inputs.</p>
+
+</div>

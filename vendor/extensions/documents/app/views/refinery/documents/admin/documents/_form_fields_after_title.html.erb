@@ -1,0 +1,22 @@
+<%# Intentionally empty, useful override point to add extra fields. %>
+<div class="field">
+  <%= f.label :protected %>
+  <%= f.check_box :protected %>
+</div>
+
+<div class="field">
+  <%= f.label :key_resource %>
+  <%= f.check_box :key_resource %>
+</div>
+
+<div class='field'>
+  <%= f.label :link_url, "External Resource URL" -%>
+  <p>Use format: http://www.link.com</p>
+  <%= f.text_field :link_url, :class => 'larger widest' -%>
+</div>
+
+<div class='field'>
+  <%= f.label :embed_code, "Video embed code" -%>
+  <p>Use embed code from youtube, viemo etc</p>
+  <%= f.text_field :embed_code, :class => 'larger widest' -%>
+</div>

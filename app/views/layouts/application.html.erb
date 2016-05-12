@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+
+    <!-- TITLE -->
+    <title><%= content_for?(:page_title) ? yield(:page_title) : copywriting('Site title', {scope: 'head', default: 'Proteus Partners'}) %></title>
+
+    <!-- META -->
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- FAVICON ETC -->
+    <%= favicon_link_tag 'favicon.ico' %>
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="72x72" href="<%= request.protocol + request.host %>/assets/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="96x96" href="<%= request.protocol + request.host %>/assets/apple-touch-icon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<%= request.protocol + request.host %>/assets/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<%= request.protocol + request.host %>/assets/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<%= request.protocol + request.host %>/assets/apple-touch-icon-152x152.png" />
+
+    <!-- META DESCRIPTION AND OPEN GRAPH -->
+    <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : copywriting('Site description', {scope: 'head', default: 'Supporting businesses make better informed decisions - to the benefit of the wider conservation community'}) %>">
+    <meta property='og:title' content="<%= content_for?(:page_title) ? yield(:page_title) : copywriting('Site title', {scope: 'head', default: 'Proteus Partners'}) %>">
+    <meta property='og:type' content="website">
+    <meta property='og:url' content="<%= request.original_url %>">
+    <meta property='og:description' content="<%= content_for?(:meta_description) ? yield(:meta_description) : copywriting('Site description', {scope: 'head', default: 'Supporting businesses make better informed decisions - to the benefit of the wider conservation community'}) %>">
+    <meta property='og:image' content="<%= content_for?(:meta_image_url) ? yield(:meta_image_url) : "" + request.protocol + request.host + "/assets/apple-touch-icon-144x144.png" %>">
+
+    <!-- TYPEKIT -->
+    <script src="//use.typekit.net/lnq0ojb.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <!-- STYLESHEETS -->
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <!--[if lte IE 9]>
+      <%= stylesheet_link_tag "ie", :media => "all" %>
+    <![endif]-->
+
+    <!-- JAVASCRIPT -->
+    <%= javascript_include_tag "application" %>
+
+    <!-- IE8 -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+      <script src="http://html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+    <![endif]-->
+
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+
+  </head>
+
+  <body class="<%= yield (:body_class) %> <%= yield (:custom_body_class) %> <%= "#{controller.controller_name} #{controller.action_name}" %>">
+
+    <%= render 'refinery/shared/google' if Rails.env.production? %>
+    <%= render 'refinery/shared/header' %>
+    <%= yield %>
+    <%= render 'refinery/shared/footer' %>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-47308714-10', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  
+  </body>
+</html>

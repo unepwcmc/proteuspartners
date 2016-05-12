@@ -1,0 +1,45 @@
+<% content_for :page_title do %><%= @tool.title + " | Proteus Partners" %><% end %>
+<% content_for :meta_description do %><%= raw truncate( sanitize(@tool.short_description, :tags=>[]), :length => 155) %><% end %>
+
+<!-- HEADER -->
+<div id="tools-banner" class="first-section" style="background-image: url(<%= background_image(@tool.header_image, '1600x450#') -%>)">
+ 
+  <div class="screenshot-image" style="background-image: url(<%= background_image(@tool.screen_shot_image, '977x400#') -%>)">
+    <div class="browser-frame"><%= image_tag 'full-width-browser-header.png' %><span><%= @tool.tool_url %></span></div>
+  </div>
+
+  <h1><%= @tool.title %></h1>
+</div>
+
+<div class="main-container clearfix">
+
+  <div class="company-link button blue-button">
+    <%= link_to "Visit #{@tool.title}", "#{@tool.tool_url}", target: "_blank" %>
+  </div>
+
+  <section id="tools-content">
+    <!-- DESCRIPTION -->
+    <div class="short-description"><%=raw @tool.short_description %></div>
+
+    <!-- WHAT CAN THE TOOL BE USED FOR -->
+    <div><%=raw @tool.long_description %></div>
+
+    <%= render '/refinery/content_page' %>
+  </section>
+
+  <% if @tool.show_wdpa %>
+    <!-- SIDE BAR -->
+    <aside id="tools-sidebar">
+  
+      <h3><%= copywriting('Download dataset title', {scope: 'tools', default: 'Download the full dataset'}) %></h3>
+    
+      <!-- DOWNLOAD DATA SET -->
+      <div class="download-section">
+        <%=raw @tool.download_description %>
+          <a href="<%= @tool.wdpa_link %>"><div class="download-link button blue-button">Download</div></a>
+      </div>
+
+    </aside>
+  <% end %>
+
+</div>

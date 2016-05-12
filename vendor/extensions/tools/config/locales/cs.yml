@@ -1,0 +1,33 @@
+cs:
+  refinery:
+    plugins:
+      tools:
+        title: Tools
+    tools:
+      admin:
+        tools:
+          actions:
+            create_new: Přidat Tool
+            reorder: Řadit Tools
+            reorder_done: Konec řazení Tools
+          records:
+            title: Tools
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Tools. Zvolte "Přidat Tool" pro přidání prvního tool.
+          tool:
+            view_live_html: Zobrazit náhled tool<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit tool
+            delete: Smazat tool
+      tools:
+        show:
+          other: Další Tools
+  activerecord:
+    attributes:
+      'refinery/tools/tool':
+        title: Title
+        header_image_id: Header Image
+        screen_shot_image_id: Screen Shot Image
+        tool_url: Tool Url
+        download_data_set: Download Data Set
+        description: Description
+        what_tools_description: What Tools Description

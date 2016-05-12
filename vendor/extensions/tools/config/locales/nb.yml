@@ -1,0 +1,33 @@
+nb:
+  refinery:
+    plugins:
+      tools:
+        title: Tools
+    tools:
+      admin:
+        tools:
+          actions:
+            create_new: Lag en ny Tool
+            reorder: Endre rekkefølgen på Tools
+            reorder_done: Ferdig å endre rekkefølgen Tools
+          records:
+            title: Tools
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Tools enda. Klikk på "Lag en ny Tool" for å legge til din første tool.
+          tool:
+            view_live_html: Vis hvordan denne tool ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne tool
+            delete: Fjern denne tool permanent
+      tools:
+        show:
+          other: Andre Tools
+  activerecord:
+    attributes:
+      'refinery/tools/tool':
+        title: Title
+        header_image_id: Header Image
+        screen_shot_image_id: Screen Shot Image
+        tool_url: Tool Url
+        download_data_set: Download Data Set
+        description: Description
+        what_tools_description: What Tools Description

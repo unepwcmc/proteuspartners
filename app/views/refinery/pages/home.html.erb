@@ -1,0 +1,152 @@
+<div id="home-banner" class="first-section">
+  <div class="main-container clearfix">
+    <h1>
+      <span>
+        <%= copywriting('Home banner text', {scope: 'homepage', default: 'Supporting businesses make better informed decisions - to the benefit of the wider conservation community'}) %>
+      </span>
+    </h1>
+  </div>
+</div>
+
+<div class="main-container clearfix">
+    
+  <section id="tools">
+
+    <h2><%= copywriting('Tools section title', {scope: 'homepage', default: 'Tools'}) %></h2>
+
+    <!-- TOOLS -->
+    <ul id="tools-showcase" class="clearfix">
+      <% @tools.each do |t| %>
+        
+        <li class="tool-item">
+          <%= link_to refinery.tools_tool_path(t) do %>
+            <div class="browser-frame"><span><%= t.tool_url %></span></div>
+
+            <div class="screenshot-image" style="background-image: url(<%= background_image(t.homepage_image, '600x300#') -%>)"></div>
+
+            <!-- <div class="clearfix"> -->
+              <h3><span><%= t.title %></span></h3>
+            <!-- </div> -->
+          <% end %>
+        </li>
+        
+      <% end %>
+    </ul>
+
+  </section>
+
+  <!-- RESOURCES -->
+  <section id="resources">
+    
+    <h2><%= copywriting('Resources section title', {scope: 'homepage', default: 'Resources'}) %></h2>
+
+    <!-- CATEGORIES -->
+    <ul id="categories-showcase">
+      <% @categories.each_with_index do |c, i| %>
+      <%= link_to refinery.documents_category_path(c) do %>
+        <li class="category-item _<%= i %>">
+          
+            <h3 class="clearfix"><span><%= c.title %></span></h3>
+          
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <!-- SEARCH (MOBILE) -->
+    <div class="resources-search--mobile">
+
+      <div class="search-input">
+
+        <div>
+          <% if false %>
+            <%= link_to "Resources", :controller => "refinery.documents_document", :action => "index" %>
+          <% end %>
+        </div>
+
+        <%= form_tag(refinery.documents_documents_path, method: :get) do %>
+        <%= text_field_tag :search, params[:search], :placeholder => "Search Resources" %>
+        <fieldset class="button">
+          <%= submit_tag "" %>
+        </fieldset>
+        <% end %>
+
+      </div>
+
+      <a href="/resources" class="resources-link"><button class="see-all-resources button blue-button"><%= copywriting('Resources section button text', {scope: 'homepage', default: 'See all resources'}) %></button></a>
+
+    </div>
+
+    <!-- LATEST UPDATES -->
+    <h2 class="latest-updates-header--desktop"><%= copywriting('Latest updates sidebar title', {scope: 'homepage', default: 'Latest Resources Updates'}) %></h2>
+
+    <h2 class="latest-updates-header--mobile"><%= copywriting('Latest updates sidebar title', {scope: 'homepage', default: 'Latest Resources Updates'}) %></h2>
+
+    <aside id="latest-updates-sidebar">
+
+      <dl class="accordion">
+      <% @recent.each do |r| %>
+        <dt class="latest-updates-item"><h5 class="accordion-title"><%= r.title %></h5></dt>
+        <dd>
+          <%=raw r.description %>
+          <%= link_to 'See in resource section', refinery.documents_documents_path(id: r.id), class: "latest-resource-link" %>
+        </dd>
+      <% end %>
+      </dl>
+    </aside>
+
+    <!-- SEARCH (DESKTOP) -->
+    <div class="resources-search--desktop">
+
+      <a href="/resources"><button class="see-all-resources button blue-button"><%= copywriting('Resources section button text', {scope: 'homepage', default: 'See all resources'}) %></button></a>
+
+      <span>OR</span>
+
+      <div class="search-input">
+
+        <div>
+          <% if false %>
+            <%= link_to "Resources", :controller => "refinery.documents_document", :action => "index" %>
+          <% end %>
+        </div>
+
+        <%= form_tag(refinery.documents_documents_path, method: :get) do %>
+          <%= text_field_tag :search, params[:search], :placeholder => "Search Resources" %>
+          <fieldset class="button">
+            <%= submit_tag "" %>
+          </fieldset>
+        <% end %>
+
+      </div>
+
+    </div>
+    
+  </section>
+
+</div>
+
+<div class="wrapper">
+
+  <div class="main-container clearfix">
+
+    <section id="homepage-about-proteus">
+      <h2><%= copywriting('About proteus section title', {scope: 'homepage', default: 'About Proteus'}) %></h2>
+
+      <p><%= copywriting('About proteus section content', {scope: 'homepage', default: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc laoreet nec tellus et dictum. Integer quis sem in arcu posuere fringilla. Donec vel tellus vitae quam volutpat pretium at pharetra elit.'}) %></p>
+
+      <div class="button blue-button">
+        <a href="/about"><%= copywriting('About proteus button text', {scope: 'homepage', default: 'Read More'}) %></a>
+      </div>
+    </section>
+
+    <section id="homepage-join-proteus">
+      <h2><%= copywriting('Join proteus section title', {scope: 'homepage', default: 'Join Proteus'}) %></h2>
+
+      <p><%= copywriting('Join proteus section content', {scope: 'homepage', default: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc laoreet nec tellus et dictum. Integer quis sem in arcu posuere fringilla. Donec vel tellus vitae quam volutpat pretium at pharetra elit.'}) %></p>
+
+      <a href="/join"><button class="button inverted-button"><%= copywriting('Join proteus button text', {scope: 'homepage', default: 'Read More'}) %></button></a>
+    </section>
+
+  </div>
+
+</div>

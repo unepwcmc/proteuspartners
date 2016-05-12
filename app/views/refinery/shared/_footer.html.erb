@@ -1,0 +1,42 @@
+<footer id="footer">
+
+  <div class="partners-showcase">
+
+    <aside>
+      <%= copywriting('Footer banner text', {scope: 'footer', default: 'If you\'re from any of these companies & want to know more, please contact us for more information'}) %>
+    </aside>
+
+    <div class="main-container clearfix">
+
+      <h4><%= copywriting('Partners title', {scope: 'footer', default: 'Partners'}) %></h4>
+
+      <ul>
+        <% @partners.each do |p| %>
+          
+          <% if p.smal_logo %>
+            <li class="aspect-ratio-4-1" style="background-image: url(<%= background_image(p.icon_image, '100x100') %>)"><%= link_to_if p.url?, "", p.url, target: "_blank" %></li>
+          <% elsif p.large_logo %>
+            <li class="aspect-ratio-4-2" style="background-image: url(<%= background_image(p.icon_image, '100x100') %>)"><%= link_to_if p.url?, "", p.url, target: "_blank" %></li>
+          <% else %>
+            <li style="background-image: url(<%= background_image(p.icon_image, '100x100') %>)"><%= link_to_if p.url?, "", p.url, target: "_blank" %></li>
+          <% end %>
+        <% end %>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="footer-info">
+
+    <a href="http://www.unep-wcmc.org/" target="_blank"><div id="unep-wcmc-footer-logo"></div></a>
+
+    <ul>
+      <% @footer_links.each do |f| %>
+        <a href="/<%= f.slug %>"><li><%= f.title %></li></a>
+      <% end %>
+    </ul>
+
+  </div>
+
+</footer>

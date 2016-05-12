@@ -1,0 +1,36 @@
+<div class="password-protect-wrapper">
+
+  <div id="password-protect-bg"></div>
+
+  <section id="sign-in">
+    <div id="padlock-icon"></div>
+
+    <div class="back-button"><%= copywriting('Back', {scope: 'password', default: 'Back'}) %></div>
+
+    <h2><%= copywriting('This area is password protected', {scope: 'password', default: 'This area is password protected'}) %></h2>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <fieldset class="text-input"><%= f.label :username %><br />
+      <%= f.text_field :username, :autofocus => true %></fieldset class="text-input">
+
+      <fieldset class="text-input"><%= f.label :password %><br />
+      <%= f.password_field :password %></fieldset class="text-input">
+
+      <a href="mailto:proteus@unep-wcmc.org?subject=Forgot my password" class="forgot-password"><%= copywriting('Forgot your username or password?', {scope: 'password', default: 'Forgot your username or password?'}) %></a>
+
+      <p>
+        This content is password protected and is available to Proteus Partners. Please login. If you do not have a password, please contact the Proteus focal point in your company for access, or alternatively contact the <a href="mailto:proteus@unep-wcmc.org">Business and Biodiversity team at UNEP-WCMC</a>. If your company is not a member of the Partnership you can see more information on how to <a href="/join">join us</a>.
+      </p>
+
+      <% if devise_mapping.rememberable? -%>
+        <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+      <% end -%>
+
+      <fieldset class="submit-input button"><%= f.submit "Enter" %></fieldset>
+    <% end %>
+  </section>
+
+</div>

@@ -1,0 +1,96 @@
+<%= form_for [refinery, :tools_admin, @tool] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @tool,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class="field">
+    <%= f.label :protected %>
+    <%= f.check_box :protected %>
+  </div>
+
+ <div class="field">
+    <%= f.label :header_image, "Header background image" %>
+    <p>Use Jpeg or PNG</p>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+      :f => f,
+      :field => :header_image_id,
+      :image => f.object.header_image,
+      :toggle_image_display => false
+    }
+    %>
+  </div>
+
+  <div class="field">
+    <%= f.label :screen_shot_image, "Header Tool screenshot image" %>
+    <p>Use Jpeg or PNG</p>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+      :f => f,
+      :field => :screen_shot_image_id,
+      :image => f.object.screen_shot_image,
+      :toggle_image_display => false
+    }
+    %>
+  </div>
+
+  <div class="field">
+    <%= f.label :homepage_image, "Image to be shown on Home Page" %>
+    <p>Use Jpeg or PNG</p>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+      :f => f,
+      :field => :homepage_image_id,
+      :image => f.object.homepage_image,
+      :toggle_image_display => false
+    }
+    %>
+  </div>
+
+
+  <div class='field'>
+    <%= f.label :tool_url, "Tool URL" -%>
+    <p>Use format: http://www.link.com</p>
+    <%= f.text_field :tool_url -%>
+  </div>
+
+  <div class="field">
+    <%= f.label :show_wdpa, "Show DATA SET download button" %>
+    <%= f.check_box :show_wdpa %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :wdpa_link, "URL for DATA SET download" -%>
+    <p>Use format: http://www.link.com</p>
+    <%= f.text_field :wdpa_link -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :download_footer -%>
+    <%= f.text_field :download_footer -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:short_description, :long_description, :download_description],
+                :object => "tools/tool" -%>
+  </div>
+
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.tools.admin.tools.tool'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @tool.title) -%>
+
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

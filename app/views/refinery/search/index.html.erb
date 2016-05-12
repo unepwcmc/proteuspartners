@@ -1,0 +1,35 @@
+<% content_for :page_title do %><%= @searched_item + " | Proteus Partners" %><% end %>
+
+<!-- CATEGORIES -->
+<div>
+  <h2>CATEGORIES</h2>
+  <% @categories.each do |c| %>
+  <%= link_to c.title, refinery.documents_category_path(c) %>
+  <% end %>
+</div>
+
+<!-- SEARCH -->
+<div>
+  <h2>SEARCH</h2>
+  <%= form_tag("/search", method: "get") do %>
+    <div class="field">
+      <%= text_field_tag :search, params[:search], :place_holder => "Search Resources" %>
+    </div>
+  <% end %>
+</div>
+
+<!-- RESOURCES -->
+<div>
+  <h2>Search for "<%= @searched_item %>"</h2>
+  <p><%= @total_records %> results found</p>
+  <% @documents.each do |d| %>
+    <p><%= d.title %></p>
+    <p><%= d.description %></p>
+    <% if d.document.present? %>
+      <%= link_to 'DOWNLOAD', d.document.url %>
+    <% else %>
+      document
+    <% end %>
+  <% end %>
+  <%= will_paginate @documents %>
+</div>

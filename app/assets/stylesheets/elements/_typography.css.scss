@@ -1,0 +1,22 @@
+@import "../_all-globals";
+
+h1 {
+  font-family: $h1-font-family;
+  font-size: em($h1-font-size);
+  font-weight: $font-weight--medium;
+}
+
+h2 {
+  font-size: em($h2-font-size);
+  font-weight: $font-weight--medium;
+  margin: 0 0 em(25px, $h2-font-size);
+}
+
+h3 {
+  font-size: em($h3-font-size);
+  font-weight: $font-weight--medium;
+}
+
+h4 {
+  font-size: em($h4-font-size);
+}

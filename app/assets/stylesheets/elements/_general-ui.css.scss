@@ -1,0 +1,40 @@
+@import "../all-globals";
+
+//** BASE DECLARATIONS FOR HELPER CLASSES **//
+
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+// Hides text for background images needing screen reader text
+
+.hidden {
+  position: absolute;
+  left: -4000px;
+}
+
+.background-white{
+  background: #FFF;
+}
+
+.text-right{
+  text-align: right
+}
+
+.text-left{
+  text-align: left
+}
+
+.text-to-front {
+  position: relative;
+  z-index: 999;
+}
+
+.dark-header {
+  background-color: $dark-header;
+  color: $white;
+  margin: 0;
+  padding: em($element-padding--thin, $h1-font-size) em($element-padding--thick, $h1-font-size);
+}

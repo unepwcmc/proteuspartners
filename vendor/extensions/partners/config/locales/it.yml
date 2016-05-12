@@ -1,0 +1,29 @@
+it:
+  refinery:
+    plugins:
+      partners:
+        title: Partners
+    partners:
+      admin:
+        partners:
+          actions:
+            create_new: Aggiungi Nuovo Partner
+            reorder: Riordina Partners
+            reorder_done: Termina il Riordino di Partners
+          records:
+            title: Partners
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Partners. Clicca "Aggiungi Nuovo Partner" per aggiungere il tuo primo partner.
+          partner:
+            view_live_html: Guarda live questo partner <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo partner
+            delete: Rimuovi per sempre questo partner
+      partners:
+        show:
+          other: Altri Partners
+  activerecord:
+    attributes:
+      'refinery/partners/partner':
+        icon_image_id: Icon Image
+        title: Title
+        url: Url

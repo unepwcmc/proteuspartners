@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      partners:
+        title: Partners
+    partners:
+      admin:
+        partners:
+          actions:
+            create_new: Přidat Partner
+            reorder: Řadit Partners
+            reorder_done: Konec řazení Partners
+          records:
+            title: Partners
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Partners. Zvolte "Přidat Partner" pro přidání prvního partner.
+          partner:
+            view_live_html: Zobrazit náhled partner<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit partner
+            delete: Smazat partner
+      partners:
+        show:
+          other: Další Partners
+  activerecord:
+    attributes:
+      'refinery/partners/partner':
+        icon_image_id: Icon Image
+        title: Title
+        url: Url

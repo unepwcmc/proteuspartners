@@ -1,0 +1,17 @@
+<dt id="<%= document.id %>" class="resources-list-item">
+  <h3 class="accordion-title"><%= document.title %></h3>
+
+  <% document.categories.where("depth = 0").each do |c| %>
+    <%= link_to "Category: #{c.title}", refinery.documents_category_path(c), class: "resource-list-category-link" %>
+  <% end %> 
+</dt>
+<dd>
+  <%=raw document.description %>
+  <a href="<%=raw document.link_url %>" class="document-external-link"><%=raw document.link_url %></a>
+
+  <% if document.document %>
+    <div class="button blue-button"><%= link_to copywriting('Download', {scope: 'resources', default: 'Download'}), refinery.documents_document_path(document, format: 'pdf'), target: "_blank" %></div>
+  <% end %>
+
+  <div class="embedded-video"><%=raw document.embed_code %></div>
+</dd>
