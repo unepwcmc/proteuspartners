@@ -10,7 +10,13 @@
   <a href="<%=raw document.link_url %>" class="document-external-link"><%=raw document.link_url %></a>
 
   <% if document.document %>
-    <div class="button blue-button"><%= link_to copywriting('Download', {scope: 'resources', default: 'Download'}), refinery.documents_document_path(document, format: 'pdf'), target: "_blank" %></div>
+    <div class="button blue-button">
+      <% if refinery_user_signed_in? || partner_signed_in? %>
+        <%= link_to copywriting('Download', {scope: 'resources', default: 'Download'}), refinery.documents_document_path(document, format: 'pdf'), target: "_blank" %>
+      <% else %>
+        <%= link_to copywriting('Download', {scope: 'resources', default: 'Download'}), "/partners/sign_in" %>
+      <% end %>
+    </div>
   <% end %>
 
   <div class="embedded-video"><%=raw document.embed_code %></div>
