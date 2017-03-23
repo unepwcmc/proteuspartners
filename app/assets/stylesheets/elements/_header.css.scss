@@ -111,7 +111,14 @@
 } 
 
 .unep-wcmc-header-logo {
-  @include header-logo($width: 115px, $image: "unep-wcmc-logo", $padding: 0);
+  background: image-url("https://s3.amazonaws.com/wcmc.logo/UN-Environment-WCMC+logo+2017.svg") no-repeat center left;
+  background-size: 100%;
+  margin-left: 12px;
+  padding: 0;
+  width: 115px;
+  
+  display: inline-block;
+  position: relative;
 }
 
 //** GENERAL NAVIGATION STYLING **//
