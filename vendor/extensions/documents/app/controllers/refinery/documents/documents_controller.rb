@@ -21,16 +21,19 @@ module Refinery
       end
 
       def show
+        if refinery_user_signed_in? || partner_signed_in?
+          # you can use meta fields from your model instead (e.g. browser_title)
+          # by swapping @page for @document in the line below:
+          present(@page)
 
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @document in the line below:
-        present(@page)
-
-        respond_to do |format|
-          format.html
-          format.pdf { 
-            send_file @document.document.file.path, type: "application/pdf", disposition: 'inline'
-          }
+          respond_to do |format|
+            format.html
+            format.pdf { 
+              send_file @document.document.file.path, type: "application/pdf", disposition: 'inline'
+            }
+          end
+        else
+          redirect_to '/partners/sign_in'
         end
       end
 
