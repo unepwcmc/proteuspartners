@@ -9,7 +9,7 @@ module ApplicationHelper
   def background_image(image, dimensions=nil)
     return unless image
     if dimensions
-      image.thumbnail(dimensions).url
+      image.thumbnail(:geometry => dimensions).url
     else
       image.url
     end
