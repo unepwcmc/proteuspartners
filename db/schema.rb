@@ -237,7 +237,6 @@ ActiveRecord::Schema.define(:version => 20141209123011) do
     t.integer  "homepage_image_id"
     t.string   "download_footer"
     t.string   "slug"
-    t.boolean  "text_logo"
   end
 
   create_table "refinery_user_plugins", :force => true do |t|

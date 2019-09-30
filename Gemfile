@@ -35,6 +35,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'json', '~> 1.8', '>= 1.8.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -63,7 +64,7 @@ gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
  gem 'refinerycms-search', '~> 2.1.0'
 #  gem 'refinerycms-page-images', '~> 2.1.0'
 
-gem 'mysql2', '0.3.12b5', :platform => :ruby
+gem 'mysql2', '0.5.1', :platform => :ruby
 gem 'jdbc-mysql', '5.1.28',   :platform => :jruby
 gem 'rack-rewrite'
 gem 'newrelic_rpm'
@@ -72,7 +73,7 @@ gem 'rack-mini-profiler'
 gem 'unicorn'
 gem 'awesome_nested_set'
 gem 'thinking-sphinx', '~> 3.1.0'
-gem 'pg'
+gem 'pg', '~> 0.11'
 gem 'will_paginate', '~> 3.0'
 gem 'friendly_id'
 
