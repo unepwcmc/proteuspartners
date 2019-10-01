@@ -54,6 +54,9 @@ gem 'json', '~> 1.8', '>= 1.8.2'
 
 # Refinery CMS
 
+gem 'refinerycms', '~> 4.0', '>= 4.0.3'
+gem 'refinerycms-authentication-devise', '~> 2.0.0'
+
 ##gem 'refinerycms', '~> 2.1.0'
 ##gem 'refinerycms-nested_models'
 ##gem 'refinerycms-copywriting'

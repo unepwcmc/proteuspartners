@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :find_all_partners
-  before_filter :footer_links
-  before_filter :header
-  before_filter :viewable_index, only: [:index]
-  before_filter :viewable_object, only: [:show]
-  before_filter :categories_side, only: [:show, :index, :home]
+  before_action :find_all_partners
+  before_action :footer_links
+  before_action :header
+  before_action :viewable_index, only: [:index]
+  before_action :viewable_object, only: [:show]
+  before_action :categories_side, only: [:show, :index, :home]
 
   def viewable_index
     # if @page.protected?
