@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.19'
+gem 'rails', '5.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -25,8 +25,8 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  ##gem 'sass-rails',   '~> 3.2.3'
+  ##gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -53,15 +53,16 @@ gem 'json', '~> 1.8', '>= 1.8.2'
 # gem 'debugger'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.1.0'
-gem 'refinerycms-nested_models'
-gem 'refinerycms-copywriting'
+
+##gem 'refinerycms', '~> 2.1.0'
+##gem 'refinerycms-nested_models'
+##gem 'refinerycms-copywriting'
 
 # Optionally, specify additional Refinery CMS Extensions here:
-gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
+##gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 #  gem 'refinerycms-blog', '~> 2.1.0'
 #  gem 'refinerycms-inquiries', '~> 2.1.0'
- gem 'refinerycms-search', '~> 2.1.0'
+## gem 'refinerycms-search', '~> 2.1.0'
 #  gem 'refinerycms-page-images', '~> 2.1.0'
 
 gem 'mysql2', '0.5.1', :platform => :ruby
@@ -71,11 +72,11 @@ gem 'newrelic_rpm'
 gem 'rack'
 gem 'rack-mini-profiler'
 gem 'unicorn'
-gem 'awesome_nested_set'
-gem 'thinking-sphinx', '~> 3.1.0'
+##gem 'awesome_nested_set'
+##gem 'thinking-sphinx', '~> 3.1.0'
 gem 'pg', '~> 0.11'
 gem 'will_paginate', '~> 3.0'
-gem 'friendly_id'
+##gem 'friendly_id'
 
 group :test do
   # gem 'refinerycms-testing'
@@ -91,19 +92,19 @@ group :development do
 end
 
 group :test, :development do
-  gem 'spork-rails'
-  gem 'rspec-rails'
-  gem 'guard'
-  gem 'guard-rails'
+  ##gem 'spork-rails'
+  ##gem 'rspec-rails'
+  ##gem 'guard'
+  ##gem 'guard-rails'
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-  gem 'guard-rspec'
-  gem 'guard-spork'
-  gem 'guard-bundler', require: false
-  gem 'guard-livereload'
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
-  gem 'capybara'
-  gem 'faker'
+  ##gem 'guard-rspec'
+  ##gem 'guard-spork'
+  ##gem 'guard-bundler', require: false
+  ##gem 'guard-livereload'
+  ##gem 'factory_girl'
+  ##gem 'factory_girl_rails'
+  ##gem 'capybara'
+  ##gem 'faker'
 end
 
 group :assets do
@@ -115,6 +116,6 @@ group :assets do
 end 
 
 
-gem 'refinerycms-documents', :path => 'vendor/extensions'
-gem 'refinerycms-tools', :path => 'vendor/extensions'
-gem 'refinerycms-partners', :path => 'vendor/extensions'
+##gem 'refinerycms-documents', :path => 'vendor/extensions'
+##gem 'refinerycms-tools', :path => 'vendor/extensions'
+##gem 'refinerycms-partners', :path => 'vendor/extensions'
