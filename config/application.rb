@@ -68,12 +68,12 @@ module Proteus
 
     # refinery change content-disipotion
     Refinery::Core::Engine.after_inclusion do
-        Refinery::Resource # force autoload
-        ::Dragonfly[:refinery_resources].content_disposition = nil
+        ##Refinery::Resource # force autoload
+        ##::Dragonfly.app(:refinery_resources).content_disposition = nil
     end
 
     config.to_prepare do
-        Refinery.searchable_models = [Refinery::Page, Refinery::Documents::Document, Refinery::Documents::Category]
+      #Refinery.searchable_models = [Refinery::Page, Refinery::Documents::Document, Refinery::Documents::Category]
     end
 
   end

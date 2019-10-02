@@ -76,7 +76,7 @@ gem 'rack'
 gem 'rack-mini-profiler'
 gem 'unicorn'
 ##gem 'awesome_nested_set'
-##gem 'thinking-sphinx', '~> 3.1.0'
+gem 'thinking-sphinx'
 gem 'pg', '~> 0.11'
 gem 'will_paginate', '~> 3.0'
 ##gem 'friendly_id'
@@ -119,6 +119,6 @@ group :assets do
 end 
 
 
-##gem 'refinerycms-documents', :path => 'vendor/extensions'
-##gem 'refinerycms-tools', :path => 'vendor/extensions'
-##gem 'refinerycms-partners', :path => 'vendor/extensions'
+gem 'refinerycms-documents', :path => 'vendor/extensions'
+gem 'refinerycms-tools', :path => 'vendor/extensions'
+gem 'refinerycms-partners', :path => 'vendor/extensions'

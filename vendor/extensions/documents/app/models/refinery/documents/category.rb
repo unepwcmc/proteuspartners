@@ -2,7 +2,7 @@ module Refinery
   module Documents
     class Category < Refinery::Core::BaseModel
 
-      attr_accessible :title, :position, :parent_id, :image_id, :sub_category_position, :description, :protected
+      attr_accessor :title, :position, :parent_id, :image_id, :sub_category_position, :description, :protected
 
       has_many :categories_documents, class_name: '::Refinery::Documents::CategoryDocument', foreign_key: :category_id, dependent: :destroy
       has_many :documents, class_name: '::Refinery::Documents::Document', through: :categories_documents
@@ -13,7 +13,7 @@ module Refinery
 
       acts_as_nested_set
 
-      acts_as_indexed :fields => [:title]
+      #acts_as_indexed :fields => [:title]
 
       extend FriendlyId
       friendly_id :title, use: [:slugged, :history]

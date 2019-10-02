@@ -11,9 +11,9 @@ module Refinery
           plugin.name = "documents"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.documents_admin_documents_path }
           plugin.pathname = root
-          plugin.activity = {
-            :class_name => :'refinery/documents/document'
-          }
+          # plugin.activity = {
+          #   :class_name => :'refinery/documents/document'
+          # }
           
         end
       end

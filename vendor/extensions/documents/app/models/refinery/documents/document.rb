@@ -8,7 +8,7 @@ module Refinery
 
       self.table_name = 'refinery_documents'
 
-      attr_accessible :title, :description, :document_id, :position, :category_ids, :protected, :key_resource, :link_url, :embed_code, :category_count
+      attr_accessor :title, :description, :document_id, :position, :category_ids, :protected, :key_resource, :link_url, :embed_code, :category_count
 
       validates :title, :presence => true, :uniqueness => true
 
@@ -21,7 +21,7 @@ module Refinery
         {:where => 'category_count > 0'}
       }
 
-      acts_as_indexed :fields => [:title]
+      #acts_as_indexed :fields => [:title]
 
       extend FriendlyId
       friendly_id :title, use: [:slugged, :history]

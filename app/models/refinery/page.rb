@@ -11,14 +11,14 @@ module Refinery
 
     class Translation
       is_seo_meta
-      attr_accessible *::SeoMeta.attributes.keys, :locale
+      attr_accessor *::SeoMeta.attributes.keys, :locale
     end
 
     # Delegate SEO Attributes to globalize translation
     seo_fields = ::SeoMeta.attributes.keys.map{|a| [a, :"#{a}="]}.flatten
     delegate(*(seo_fields << {:to => :translation}))
 
-    attr_accessible :id, :deletable, :link_url, :menu_match,
+    attr_accessor :id, :deletable, :link_url, :menu_match,
                     :skip_to_first_child, :position, :show_in_menu, :draft,
                     :parts_attributes, :parent_id, :menu_title, :page_id,
                     :layout_template, :view_template, :custom_slug, :slug,
@@ -45,10 +45,10 @@ module Refinery
     has_many :parts,
              :foreign_key => :refinery_page_id,
              :class_name => '::Refinery::PagePart',
-             :order => 'position ASC',
+             #:order => 'position ASC',
              :inverse_of => :page,
-             :dependent => :destroy,
-             :include => ((:translations) if ::Refinery::PagePart.respond_to?(:translation_class))
+             :dependent => :destroy#,
+             #:include => ((:translations) if ::Refinery::PagePart.respond_to?(:translation_class))
 
     accepts_nested_attributes_for :parts, :allow_destroy => true
 
@@ -159,7 +159,7 @@ module Refinery
         rebuild_without_slug_nullification!
         nullify_duplicate_slugs_under_the_same_parent!
       end
-      alias_method_chain :rebuild!, :slug_nullification
+      alias_method :rebuild!, :slug_nullification!
 
       protected
       def nullify_duplicate_slugs_under_the_same_parent!
@@ -386,13 +386,13 @@ module Refinery
         slug_string.split('/').select(&:present?).map {|s| normalize_friendly_id_with_marketable_urls(s) }.join('/')
       else
         sluggified = slug_string.to_slug.normalize!
-        if Pages.marketable_urls && self.class.friendly_id_config.reserved_words.include?(sluggified)
-          sluggified << "-page"
-        end
+        # if Pages.marketable_urls && self.class.friendly_id_config.reserved_words.include?(sluggified)
+        #   sluggified << "-page"
+        # end
         sluggified
       end
     end
-    alias_method_chain :normalize_friendly_id, :marketable_urls
+    #alias_method :normalize_friendly_id_with_marketable_urls, :marketable_urls
 
     def puts_destroy_help
       puts "This page is not deletable. Please use .destroy! if you really want it deleted "

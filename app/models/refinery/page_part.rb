@@ -1,7 +1,7 @@
 module Refinery
   class PagePart < Refinery::Core::BaseModel
 
-    attr_accessible :title, :content, :position, :body, :refinery_page_id
+    attr_accessor :title, :content, :position, :body, :refinery_page_id
     belongs_to :page, :foreign_key => :refinery_page_id
 
     validates :title, :presence => true, :uniqueness => {:scope => :refinery_page_id}
@@ -19,7 +19,7 @@ module Refinery
       normalise_text_fields
     end
 
-    self.translation_class.send :attr_accessible, :locale if self.respond_to?(:translation_class)
+    self.translation_class.send :attr_accessor, :locale if self.respond_to?(:translation_class)
 
   protected
     def normalise_text_fields
