@@ -159,7 +159,7 @@ module Refinery
         rebuild_without_slug_nullification!
         nullify_duplicate_slugs_under_the_same_parent!
       end
-      alias_method :rebuild!, :slug_nullification!
+      alias_method :slug_nullification!, :rebuild!
 
       protected
       def nullify_duplicate_slugs_under_the_same_parent!
