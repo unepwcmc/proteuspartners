@@ -1,9 +1,9 @@
 Refinery::Pages::Admin::PreviewController.class_eval do
 
-  before_filter :find_tools
-  before_filter :find_main_categories
-  before_filter :find_partners
-  before_filter :find_footer_links
+  before_action :find_tools
+  before_action :find_main_categories
+  before_action :find_partners
+  before_action :find_footer_links
 
   def find_tools
     @tools = Refinery::Tools::Tool.order('position ASC').limit(4)

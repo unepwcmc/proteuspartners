@@ -4,8 +4,8 @@ module Refinery
       class CategoriesController < ::Refinery::AdminController
 
         crudify :'refinery/documents/category',
-                :order => "lft ASC",
-                :include => [:children],
+                #:order => "lft ASC",
+                #:include => [:children],
                 :paging => false
         
         def children

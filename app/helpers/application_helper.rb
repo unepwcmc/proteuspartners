@@ -1,5 +1,5 @@
 module ApplicationHelper
-  include Refinery::Copywriting::CopywritingHelper
+  #include Refinery::Copywriting::CopywritingHelper
 
   def output_term_associations()
     categories = Refinery::Documents::Category.where('depth = 0').order(:title)

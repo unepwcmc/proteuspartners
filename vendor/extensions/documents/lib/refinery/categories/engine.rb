@@ -11,9 +11,9 @@ module Refinery
           plugin.name = "categories"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.documents_admin_categories_path }
           plugin.pathname = root
-          plugin.activity = {
-            :class_name => :'refinery/documents/category'
-          }
+          # plugin.activity = {
+          #   :class_name => :'refinery/documents/category'
+          # }
           plugin.menu_match = %r{refinery/documents/categories(/.*)?$}
         end
       end

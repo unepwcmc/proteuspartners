@@ -11,9 +11,9 @@ module Refinery
           plugin.name = "partners"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.partners_admin_partners_path }
           plugin.pathname = root
-          plugin.activity = {
-            :class_name => :'refinery/partners/partner'
-          }
+          # plugin.activity = {
+          #   :class_name => :'refinery/partners/partner'
+          # }
           
         end
       end

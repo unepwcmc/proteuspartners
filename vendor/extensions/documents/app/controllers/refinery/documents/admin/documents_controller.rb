@@ -3,11 +3,11 @@ module Refinery
     module Admin
       class DocumentsController < ::Refinery::AdminController
 
-        before_filter :set_category_id_default, :only => [:create, :update]
+        before_action :set_category_id_default, :only => [:create, :update]
 
         crudify :'refinery/documents/document',
                 :xhr_paging => true,
-                :order => "title ASC",
+                #:order => "title ASC",
                 :sortable => false
 
         protected
